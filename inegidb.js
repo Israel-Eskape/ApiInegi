@@ -39,27 +39,11 @@ class DbService {
         }
     }
 
-    async searchByFields(name, field, field2) {
-        try {
-            const response = await new Promise((resolve, reject) => {
-                const query = `SELECT * FROM denue_inegi WHERE ${field}= ? and ${field2}  = ?;`;
-                connection.query(query, [name], (err, results) => {
-                    if (err) reject(new Error(err.message));
-                    resolve(results);
-                })
-            });
-
-            return response;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-
+    
     async gerAll(name) {
         try {
             const response = await new Promise((resolve, reject) => {
-                const query = `SELECT * FROM denue_inegi;`;
+                const query = `SELECT * FROM bajacalifornia;`;
                 connection.query(query, [name], (err, results) => {
                     if (err) reject(new Error(err.message));
                     resolve(results);
